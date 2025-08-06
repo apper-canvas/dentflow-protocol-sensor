@@ -81,9 +81,9 @@ const formatDate = (dateString) => {
               </p>
             </div>
             
-            <Badge variant={getStatusVariant(treatment.status)}>
+<Badge variant={getStatusVariant(treatment.status)}>
               <ApperIcon name={getStatusIcon(treatment.status)} className="w-3 h-3 mr-1" />
-              {treatment.status === "in-progress" ? "In Progress" : treatment.status.charAt(0).toUpperCase() + treatment.status.slice(1)}
+              {treatment.status === "in-progress" ? "In Progress" : treatment.status ? treatment.status.charAt(0).toUpperCase() + treatment.status.slice(1) : "Unknown"}
             </Badge>
           </div>
         </div>
