@@ -1,0 +1,79 @@
+[
+  {
+    "Id": 1,
+    "patientId": "1",
+    "dateTime": "2024-01-24T09:00:00",
+    "duration": 60,
+    "type": "Cleaning & Checkup",
+    "status": "confirmed",
+    "provider": "Dr. Smith",
+    "room": "Room 1",
+    "notes": "Regular cleaning appointment"
+  },
+  {
+    "Id": 2,
+    "patientId": "2",
+    "dateTime": "2024-01-24T10:30:00",
+    "duration": 90,
+    "type": "Root Canal",
+    "status": "confirmed",
+    "provider": "Dr. Johnson",
+    "room": "Room 2",
+    "notes": "Root canal treatment for tooth #14"
+  },
+  {
+    "Id": 3,
+    "patientId": "3",
+    "dateTime": "2024-01-24T14:00:00",
+    "duration": 45,
+    "type": "Consultation",
+    "status": "pending",
+    "provider": "Dr. Smith",
+    "room": "Room 1",
+    "notes": "Initial consultation for orthodontics"
+  },
+  {
+    "Id": 4,
+    "patientId": "4",
+    "dateTime": "2024-01-24T15:30:00",
+    "duration": 30,
+    "type": "Follow-up",
+    "status": "confirmed",
+    "provider": "Dr. Wilson",
+    "room": "Room 3",
+    "notes": "Post-surgery follow-up"
+  },
+  {
+    "Id": 5,
+    "patientId": "5",
+    "dateTime": "2024-01-25T09:30:00",
+    "duration": 60,
+    "type": "Filling",
+    "status": "confirmed",
+    "provider": "Dr. Smith",
+    "room": "Room 1",
+    "notes": "Composite filling for cavity"
+  },
+  {
+    "Id": 6,
+    "patientId": "6",
+    "dateTime": "2024-01-25T11:00:00",
+    "duration": 120,
+    "type": "Crown Placement",
+    "status": "confirmed",
+    "provider": "Dr. Johnson",
+    "room": "Room 2",
+    "notes": "Ceramic crown placement"
+  },
+  {
+    "Id": 7,
+    "patientId": "1",
+    "dateTime": "2024-01-25T13:00:00",
+    "duration": 30,
+    "type": "X-Ray",
+    "status": "pending",
+    "provider": "Dr. Wilson",
+    "room": "X-Ray Room",
+    "notes": "Panoramic X-ray"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 1,
+    "patientId": "1",
+    "date": "2024-01-10",
+    "procedure": "Teeth Cleaning",
+    "tooth": ["All"],
+    "provider": "Dr. Smith",
+    "cost": 150.00,
+    "insuranceCovered": 120.00,
+    "notes": "Routine cleaning completed. Good oral health maintained.",
+    "status": "completed"
+  },
+  {
+    "Id": 2,
+    "patientId": "2",
+    "date": "2024-01-08",
+    "procedure": "Composite Filling",
+    "tooth": ["#18"],
+    "provider": "Dr. Johnson",
+    "cost": 280.00,
+    "insuranceCovered": 200.00,
+    "notes": "Single surface composite filling. Patient tolerated procedure well.",
+    "status": "completed"
+  },
+  {
+    "Id": 3,
+    "patientId": "3",
+    "date": "2024-01-05",
+    "procedure": "Root Canal Therapy",
+    "tooth": ["#14"],
+    "provider": "Dr. Wilson",
+    "cost": 1200.00,
+    "insuranceCovered": 800.00,
+    "notes": "Root canal completed in single visit. Temporary filling placed.",
+    "status": "completed"
+  },
+  {
+    "Id": 4,
+    "patientId": "4",
+    "date": "2024-01-03",
+    "procedure": "Crown Preparation",
+    "tooth": ["#3"],
+    "provider": "Dr. Smith",
+    "cost": 800.00,
+    "insuranceCovered": 600.00,
+    "notes": "Crown prep completed. Temporary crown placed. Permanent crown ordered.",
+    "status": "in-progress"
+  },
+  {
+    "Id": 5,
+    "patientId": "5",
+    "date": "2024-01-12",
+    "procedure": "Dental Exam",
+    "tooth": ["All"],
+    "provider": "Dr. Johnson",
+    "cost": 120.00,
+    "insuranceCovered": 100.00,
+    "notes": "Comprehensive dental examination. Minor cavities detected.",
+    "status": "completed"
+  },
+  {
+    "Id": 6,
+    "patientId": "6",
+    "date": "2024-01-06",
+    "procedure": "Tooth Extraction",
+    "tooth": ["#32"],
+    "provider": "Dr. Wilson",
+    "cost": 350.00,
+    "insuranceCovered": 250.00,
+    "notes": "Simple extraction of wisdom tooth. Patient recovering well.",
+    "status": "completed"
+  }
+]
