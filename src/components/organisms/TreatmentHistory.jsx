@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { treatmentService } from "@/services/api/treatmentService";
 import { patientService } from "@/services/api/patientService";
 import TreatmentCard from "@/components/molecules/TreatmentCard";
@@ -7,7 +8,8 @@ import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
 
 const TreatmentHistory = ({ patientId, limit }) => {
-  const [treatments, setTreatments] = useState([]);
+  const navigate = useNavigate();
+const [treatments, setTreatments] = useState([]);
   const [patients, setPatients] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,8 +60,6 @@ const TreatmentHistory = ({ patientId, limit }) => {
     loadTreatments();
   }, [patientId, limit]);
 const handleTreatmentClick = (treatment) => {
-    const { useNavigate } = require('react-router-dom');
-    const navigate = useNavigate();
     navigate(`/patients/${treatment.patientId}`);
   };
 
@@ -84,8 +84,6 @@ const handleTreatmentClick = (treatment) => {
         message={patientId ? "No treatment history for this patient." : "No treatments have been recorded yet."}
 actionLabel="Add Treatment"
         onAction={() => {
-          const { useNavigate } = require('react-router-dom');
-          const navigate = useNavigate();
           navigate('/treatments');
         }}
       />

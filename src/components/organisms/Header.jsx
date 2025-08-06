@@ -1,7 +1,7 @@
 import { cn } from "@/utils/cn";
+import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
 import SearchBar from "@/components/molecules/SearchBar";
-
 const Header = ({ 
   title = "Dashboard",
   subtitle,
@@ -46,8 +46,7 @@ const Header = ({
 <div className="flex items-center space-x-3">
               <button 
                 className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-                onClick={() => {
-                  const { toast } = require('react-toastify');
+onClick={() => {
                   toast.info('No new notifications');
                 }}
               >

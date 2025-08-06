@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { appointmentService } from "@/services/api/appointmentService";
 import { patientService } from "@/services/api/patientService";
 import AppointmentCard from "@/components/molecules/AppointmentCard";
@@ -7,7 +8,8 @@ import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
 
 const AppointmentList = ({ dateFilter = "today", limit }) => {
-  const [appointments, setAppointments] = useState([]);
+  const navigate = useNavigate();
+const [appointments, setAppointments] = useState([]);
   const [patients, setPatients] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -59,8 +61,6 @@ const AppointmentList = ({ dateFilter = "today", limit }) => {
     loadAppointments();
   }, [dateFilter, limit]);
 const handleAppointmentClick = (appointment) => {
-    const { useNavigate } = require('react-router-dom');
-    const navigate = useNavigate();
     navigate(`/patients/${appointment.patientId}`);
   };
 

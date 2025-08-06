@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
 import Header from "@/components/organisms/Header";
 import TreatmentHistory from "@/components/organisms/TreatmentHistory";
@@ -7,14 +8,10 @@ import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import Select from "@/components/atoms/Select";
 import Card from "@/components/atoms/Card";
-
 const Treatments = () => {
   const [statusFilter, setStatusFilter] = useState("all");
   const [viewMode, setViewMode] = useState("list");
   const [showPlanBuilder, setShowPlanBuilder] = useState(false);
-
-const { toast } = require('react-toastify');
-
   const handleAddTreatment = () => {
     toast.info("Redirecting to add new treatment form");
     // In a real app, this would navigate to a treatment creation form
