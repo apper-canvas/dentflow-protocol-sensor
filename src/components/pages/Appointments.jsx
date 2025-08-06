@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast } from 'react-toastify';
 import Header from "@/components/organisms/Header";
 import AppointmentList from "@/components/organisms/AppointmentList";
+import AppointmentScheduleModal from "@/components/molecules/AppointmentScheduleModal";
 import Button from "@/components/atoms/Button";
 import Card from "@/components/atoms/Card";
 import Select from "@/components/atoms/Select";
 import ApperIcon from "@/components/ApperIcon";
 
 const Appointments = () => {
-  const [viewMode, setViewMode] = useState("list");
+const [viewMode, setViewMode] = useState("list");
   const [dateFilter, setDateFilter] = useState("today");
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
-  const handleScheduleAppointment = () => {
-    console.log("Schedule new appointment");
+const handleScheduleAppointment = () => {
+    setShowScheduleModal(true);
+  };
+
+  const handleAppointmentCreated = () => {
+    setRefreshTrigger(prev => prev + 1);
+  };
+
+  const handleCloseModal = () => {
+    setShowScheduleModal(false);
   };
 
   const viewModes = [
@@ -104,11 +116,18 @@ const Appointments = () => {
             </div>
           </div>
           
-          <AppointmentList 
+<AppointmentList 
             dateFilter={dateFilter === "all" ? undefined : dateFilter}
+            key={refreshTrigger}
           />
         </Card>
       </div>
+
+      <AppointmentScheduleModal
+        isOpen={showScheduleModal}
+        onClose={handleCloseModal}
+        onAppointmentCreated={handleAppointmentCreated}
+      />
     </div>
   );
 };
