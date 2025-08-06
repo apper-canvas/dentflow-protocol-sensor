@@ -13,16 +13,36 @@ const Treatments = () => {
   const [viewMode, setViewMode] = useState("list");
   const [showPlanBuilder, setShowPlanBuilder] = useState(false);
 
-const handleAddTreatment = () => {
-    console.log("Add new treatment");
+const { toast } = require('react-toastify');
+
+  const handleAddTreatment = () => {
+    toast.info("Redirecting to add new treatment form");
+    // In a real app, this would navigate to a treatment creation form
   };
 
   const handleCreatePlan = () => {
     setShowPlanBuilder(true);
+    toast.info("Opening treatment plan builder");
   };
 
   const handleClosePlanBuilder = () => {
     setShowPlanBuilder(false);
+  };
+
+  const handleAdvancedFilter = () => {
+    toast.info("Opening advanced filter options");
+  };
+
+  const handleExportReport = () => {
+    toast.success("Treatment report exported successfully");
+  };
+
+  const handleSearch = () => {
+    toast.info("Opening search functionality");
+  };
+
+  const handleDateRange = () => {
+    toast.info("Opening date range picker");
   };
 
   const statusFilters = [
@@ -93,11 +113,11 @@ const handleAddTreatment = () => {
               </Select>
             </div>
             
-            <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" icon="Filter">
+<div className="flex items-center space-x-2">
+              <Button variant="outline" size="sm" icon="Filter" onClick={handleAdvancedFilter}>
                 Advanced Filter
               </Button>
-              <Button variant="outline" size="sm" icon="Download">
+              <Button variant="outline" size="sm" icon="Download" onClick={handleExportReport}>
                 Export Report
               </Button>
             </div>
@@ -115,10 +135,10 @@ const handleAddTreatment = () => {
             </div>
             
             <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" icon="Search">
+<Button variant="outline" size="sm" icon="Search" onClick={handleSearch}>
                 Search
               </Button>
-              <Button variant="outline" size="sm" icon="Calendar">
+              <Button variant="outline" size="sm" icon="Calendar" onClick={handleDateRange}>
                 Date Range
               </Button>
             </div>

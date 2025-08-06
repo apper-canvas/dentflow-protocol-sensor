@@ -57,9 +57,10 @@ const TreatmentHistory = ({ patientId, limit }) => {
   useEffect(() => {
     loadTreatments();
   }, [patientId, limit]);
-
-  const handleTreatmentClick = (treatment) => {
-    console.log("Treatment clicked:", treatment);
+const handleTreatmentClick = (treatment) => {
+    const { useNavigate } = require('react-router-dom');
+    const navigate = useNavigate();
+    navigate(`/patients/${treatment.patientId}`);
   };
 
   if (loading) {
@@ -81,8 +82,12 @@ const TreatmentHistory = ({ patientId, limit }) => {
         icon="Stethoscope"
         title="No treatments found"
         message={patientId ? "No treatment history for this patient." : "No treatments have been recorded yet."}
-        actionLabel="Add Treatment"
-        onAction={() => console.log("Add new treatment")}
+actionLabel="Add Treatment"
+        onAction={() => {
+          const { useNavigate } = require('react-router-dom');
+          const navigate = useNavigate();
+          navigate('/treatments');
+        }}
       />
     );
   }

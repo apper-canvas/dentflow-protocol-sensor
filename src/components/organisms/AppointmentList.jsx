@@ -11,7 +11,7 @@ const AppointmentList = ({ dateFilter = "today", limit }) => {
   const [patients, setPatients] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [showModal, setShowModal] = useState(false);
   const loadAppointments = async () => {
     try {
       setLoading(true);
@@ -58,9 +58,10 @@ const AppointmentList = ({ dateFilter = "today", limit }) => {
   useEffect(() => {
     loadAppointments();
   }, [dateFilter, limit]);
-
-  const handleAppointmentClick = (appointment) => {
-    console.log("Appointment clicked:", appointment);
+const handleAppointmentClick = (appointment) => {
+    const { useNavigate } = require('react-router-dom');
+    const navigate = useNavigate();
+    navigate(`/patients/${appointment.patientId}`);
   };
 
   if (loading) {
@@ -82,8 +83,8 @@ const AppointmentList = ({ dateFilter = "today", limit }) => {
         icon="Calendar"
         title={dateFilter === "today" ? "No appointments today" : "No appointments found"}
         message={dateFilter === "today" ? "Your schedule is clear for today." : "No appointments have been scheduled yet."}
-        actionLabel="Schedule Appointment"
-        onAction={() => console.log("Schedule new appointment")}
+actionLabel="Schedule Appointment"
+        onAction={() => setShowModal(true)}
       />
     );
   }

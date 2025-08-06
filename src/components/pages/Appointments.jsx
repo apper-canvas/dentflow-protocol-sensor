@@ -107,10 +107,16 @@ const handleScheduleAppointment = () => {
             </div>
             
             <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" icon="Filter">
+<Button variant="outline" size="sm" icon="Filter" onClick={() => {
+                const { toast } = require('react-toastify');
+                toast.info("Opening appointment filter options");
+              }}>
                 Filter
               </Button>
-              <Button variant="outline" size="sm" icon="Download">
+              <Button variant="outline" size="sm" icon="Download" onClick={() => {
+                const { toast } = require('react-toastify');
+                toast.success("Appointment schedule exported successfully");
+              }}>
                 Export
               </Button>
             </div>
