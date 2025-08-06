@@ -49,9 +49,8 @@ const PatientForm = ({ onSubmit, onCancel, initialData = null, isLoading = false
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-
-    // Phone validation
-    if (formData.phone && !/^[\d\s\-\(\)\+]+$/.test(formData.phone)) {
+// Phone validation
+    if (formData.phone && !/^[\d\s\-()+]+$/.test(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number";
     }
 
