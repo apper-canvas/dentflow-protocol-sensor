@@ -87,11 +87,11 @@ const TreatmentHistory = ({ patientId, limit }) => {
     );
   }
 
-  return (
+return (
     <div className="space-y-4">
-      {treatments.map((treatment) => (
+      {treatments.map((treatment, index) => (
         <TreatmentCard
-          key={treatment.Id}
+          key={treatment.id || treatment.Id || treatment.treatmentId || `treatment-${index}`}
           treatment={treatment}
           patient={patients[treatment.patientId]}
           onClick={handleTreatmentClick}
