@@ -11,9 +11,23 @@ const TreatmentCard = ({
   className,
   ...props 
 }) => {
-  const formatDate = (dateString) => {
-    return format(new Date(dateString), "MMM d, yyyy");
-  };
+const formatDate = (dateString) => {
+  if (!dateString || typeof dateString !== 'string') {
+    return "No date";
+  }
+  
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) {
+    return "Invalid date";
+  }
+  
+  try {
+    return format(date, "MMM d, yyyy");
+  } catch (error) {
+    console.warn('Date formatting error:', error, 'for dateString:', dateString);
+    return "Date error";
+  }
+};
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-US', {
