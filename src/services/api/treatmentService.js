@@ -56,11 +56,29 @@ export const treatmentService = {
     treatments.splice(index, 1);
     return true;
   },
-
-  async getRecentTreatments(limit = 10) {
+async getRecentTreatments(limit = 10) {
     await delay(200);
     return [...treatments]
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, limit);
+  },
+
+  async getProcedureLibrary() {
+    await delay(200);
+    return treatmentsData.procedureLibrary || [];
+  },
+
+  async searchProcedures(searchTerm, category = null) {
+    await delay(300);
+    const procedures = treatmentsData.procedureLibrary || [];
+    
+    return procedures.filter(procedure => {
+      const matchesSearch = !searchTerm || 
+        procedure.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        procedure.description?.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = !category || procedure.category === category;
+      
+      return matchesSearch && matchesCategory;
+    });
   }
 };
