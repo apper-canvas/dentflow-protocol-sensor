@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/organisms/Header";
 import DashboardStats from "@/components/organisms/DashboardStats";
 import AppointmentList from "@/components/organisms/AppointmentList";
@@ -7,7 +8,12 @@ import Card from "@/components/atoms/Card";
 import Button from "@/components/atoms/Button";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [selectedView, setSelectedView] = useState("today");
+
+  const handleAddPatient = () => {
+    navigate('/patients/new');
+  };
 
   const getCurrentDate = () => {
     return new Date().toLocaleDateString('en-US', {
@@ -17,18 +23,17 @@ const Dashboard = () => {
       day: 'numeric'
     });
   };
-
   return (
     <div className="min-h-screen">
       <Header
         title="Dashboard"
         subtitle={`Welcome back! Here's what's happening ${getCurrentDate()}`}
-        actions={
+actions={
           <div className="flex space-x-3">
             <Button variant="outline" icon="Calendar">
               Schedule
             </Button>
-            <Button variant="primary" icon="UserPlus">
+            <Button variant="primary" icon="UserPlus" onClick={handleAddPatient}>
               Add Patient
             </Button>
           </div>
@@ -92,8 +97,11 @@ const Dashboard = () => {
         <section>
           <Card className="p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div 
+                className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+                onClick={handleAddPatient}
+              >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-blue-100 rounded-lg flex items-center justify-center">
                     <Button variant="ghost" size="sm" icon="UserPlus" />
