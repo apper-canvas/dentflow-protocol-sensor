@@ -18,7 +18,7 @@ const NewPatient = () => {
     setIsLoading(true);
     try {
       const newPatient = await patientService.create(patientData);
-      toast.success(`Patient ${newPatient.firstName} ${newPatient.lastName} created successfully!`);
+toast.success(`Patient ${newPatient.firstName_c || newPatient.firstName} ${newPatient.lastName_c || newPatient.lastName} created successfully!`);
       navigate("/patients");
     } catch (error) {
       console.error("Error creating patient:", error);

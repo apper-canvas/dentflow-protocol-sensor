@@ -31,14 +31,14 @@ const DashboardStats = () => {
       const oneWeekAgo = new Date();
       oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
       
-      const weekTreatments = treatments.filter(treatment => 
-        new Date(treatment.date) >= oneWeekAgo && treatment.status === "completed"
+const weekTreatments = treatments.filter(treatment => 
+        new Date(treatment.date_c || treatment.date) >= oneWeekAgo && (treatment.status_c || treatment.status) === "completed"
       );
       
-      const weekRevenue = weekTreatments.reduce((sum, treatment) => sum + treatment.cost, 0);
+const weekRevenue = weekTreatments.reduce((sum, treatment) => sum + (treatment.cost_c || treatment.cost), 0);
       
       const pendingTreatments = treatments.filter(treatment => 
-        treatment.status === "in-progress" || treatment.status === "planned"
+        (treatment.status_c || treatment.status) === "in-progress" || (treatment.status_c || treatment.status) === "planned"
       ).length;
       
       setStats({

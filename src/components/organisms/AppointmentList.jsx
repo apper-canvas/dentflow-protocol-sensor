@@ -38,7 +38,7 @@ const [appointments, setAppointments] = useState([]);
       setAppointments(appointmentData);
       
       // Load patient data for each appointment
-      const patientIds = [...new Set(appointmentData.map(apt => apt.patientId))];
+const patientIds = [...new Set(appointmentData.map(apt => apt.patientId_c || apt.patientId))];
       const patientPromises = patientIds.map(id => patientService.getById(id));
       const patientResults = await Promise.allSettled(patientPromises);
       
@@ -61,7 +61,7 @@ const [appointments, setAppointments] = useState([]);
     loadAppointments();
   }, [dateFilter, limit]);
 const handleAppointmentClick = (appointment) => {
-    navigate(`/patients/${appointment.patientId}`);
+    navigate(`/patients/${appointment.patientId_c || appointment.patientId}`);
   };
 
   if (loading) {
@@ -95,7 +95,7 @@ actionLabel="Schedule Appointment"
         <AppointmentCard
           key={appointment.Id}
           appointment={appointment}
-          patient={patients[appointment.patientId]}
+patient={patients[appointment.patientId_c || appointment.patientId]}
           onClick={handleAppointmentClick}
           className="animate-fade-in"
         />

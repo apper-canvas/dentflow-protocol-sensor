@@ -36,7 +36,7 @@ const [treatments, setTreatments] = useState([]);
       
       // Load patient data for treatments if not filtered by patientId
       if (!patientId) {
-        const patientIds = [...new Set(treatmentData.map(treatment => treatment.patientId))];
+const patientIds = [...new Set(treatmentData.map(treatment => treatment.patientId_c || treatment.patientId))];
         const patientPromises = patientIds.map(id => patientService.getById(id));
         const patientResults = await Promise.allSettled(patientPromises);
         
@@ -60,7 +60,7 @@ const [treatments, setTreatments] = useState([]);
     loadTreatments();
   }, [patientId, limit]);
 const handleTreatmentClick = (treatment) => {
-    navigate(`/patients/${treatment.patientId}`);
+    navigate(`/patients/${treatment.patientId_c || treatment.patientId}`);
   };
 
   if (loading) {
@@ -95,7 +95,7 @@ return (
       {treatments.map((treatment, index) => (
         <TreatmentCard
           key={treatment.id || treatment.Id || treatment.treatmentId || `treatment-${index}`}
-          treatment={treatment}
+patient={patients[treatment.patientId_c || treatment.patientId]}
           patient={patients[treatment.patientId]}
           onClick={handleTreatmentClick}
           className="animate-fade-in"

@@ -213,9 +213,9 @@ const TreatmentPlanBuilder = ({ onClose, planId = null }) => {
                   required
                 >
                   <option value="">Select a patient</option>
-                  {patients.map(patient => (
+{patients.map(patient => (
                     <option key={patient.Id} value={patient.Id}>
-                      {patient.name}
+                      {patient.Name || `${patient.firstName_c || patient.firstName} ${patient.lastName_c || patient.lastName}`}
                     </option>
                   ))}
                 </Select>

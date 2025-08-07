@@ -1,26 +1,30 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
-import Card from "@/components/atoms/Card";
-import Input from "@/components/atoms/Input";
-import Select from "@/components/atoms/Select";
-import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
+import Input from "@/components/atoms/Input";
+import Button from "@/components/atoms/Button";
+import Select from "@/components/atoms/Select";
+import Card from "@/components/atoms/Card";
 
 const PatientForm = ({ onSubmit, onCancel, initialData = null, isLoading = false }) => {
-  const [formData, setFormData] = useState({
-    firstName: initialData?.firstName || "",
-    lastName: initialData?.lastName || "",
-    dateOfBirth: initialData?.dateOfBirth || "",
-    gender: initialData?.gender || "",
-    phone: initialData?.phone || "",
-    email: initialData?.email || "",
-    address: initialData?.address || "",
-    emergencyContact: initialData?.emergencyContact || "",
-    emergencyPhone: initialData?.emergencyPhone || "",
-    insurance: initialData?.insurance || "",
-    medicalHistory: initialData?.medicalHistory || "",
-    allergies: initialData?.allergies || "",
-    medications: initialData?.medications || ""
+const [formData, setFormData] = useState({
+    firstName: initialData?.firstName_c || initialData?.firstName || "",
+    lastName: initialData?.lastName_c || initialData?.lastName || "",
+    dateOfBirth: initialData?.dateOfBirth_c || initialData?.dateOfBirth || "",
+    gender: initialData?.gender_c || initialData?.gender || "",
+    phone: initialData?.phone_c || initialData?.phone || "",
+    email: initialData?.email_c || initialData?.email || "",
+    address: initialData?.address_c || initialData?.address || "",
+    emergencyContact: initialData?.emergencyContact_c || initialData?.emergencyContact || "",
+    emergencyPhone: initialData?.emergencyPhone_c || initialData?.emergencyPhone || "",
+    insurance: initialData?.insuranceProvider_c || initialData?.insurance || "",
+    medicalHistory: Array.isArray(initialData?.medicalHistory_c || initialData?.medicalHistory) 
+      ? (initialData?.medicalHistory_c || initialData?.medicalHistory).join(", ") 
+      : (initialData?.medicalHistory_c || initialData?.medicalHistory || ""),
+    allergies: Array.isArray(initialData?.allergies_c || initialData?.allergies)
+      ? (initialData?.allergies_c || initialData?.allergies).join(", ")
+      : (initialData?.allergies_c || initialData?.allergies || ""),
+    medications: initialData?.medications_c || initialData?.medications || ""
   });
 
   const [errors, setErrors] = useState({});
@@ -92,10 +96,21 @@ const PatientForm = ({ onSubmit, onCancel, initialData = null, isLoading = false
       toast.error("Please correct the errors in the form");
       return;
     }
-
-    onSubmit(formData);
+// Transform form data for database format
+    const submitData = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      dateOfBirth: formData.dateOfBirth,
+      phone: formData.phone,
+      email: formData.email,
+      address: formData.address,
+      insurance: formData.insurance,
+      insuranceId: formData.insuranceId || "",
+      medicalHistory: formData.medicalHistory ? formData.medicalHistory.split(",").map(item => item.trim()).filter(item => item) : [],
+      allergies: formData.allergies ? formData.allergies.split(",").map(item => item.trim()).filter(item => item) : []
+    };
+onSubmit(submitData);
   };
-
   return (
     <div className="max-w-4xl mx-auto">
       <Card className="p-6">

@@ -8,7 +8,7 @@ import Select from '@/components/atoms/Select';
 import ApperIcon from '@/components/ApperIcon';
 
 const AppointmentScheduleModal = ({ isOpen, onClose, onAppointmentCreated }) => {
-  const [patients, setPatients] = useState([]);
+const [patients, setPatients] = useState([]);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     patientId: '',
@@ -186,9 +186,9 @@ const AppointmentScheduleModal = ({ isOpen, onClose, onAppointmentCreated }) => 
                 onChange={(value) => handleInputChange('patientId', value)}
                 placeholder="Select a patient"
               >
-                {patients.map(patient => (
+{patients.map(patient => (
                   <option key={patient.Id} value={patient.Id.toString()}>
-                    {patient.firstName} {patient.lastName} - {patient.phone}
+                    {patient.firstName_c || patient.firstName} {patient.lastName_c || patient.lastName} - {patient.phone_c || patient.phone}
                   </option>
                 ))}
               </Select>

@@ -1,240 +1,240 @@
-[
-[
-  {
-    "Id": 1,
-    "patientId": "1",
-    "date": "2024-01-10",
-    "procedure": "Teeth Cleaning",
-    "tooth": ["All"],
-    "provider": "Dr. Smith",
-    "cost": 150.00,
-    "insuranceCovered": 120.00,
-    "notes": "Routine cleaning completed. Good oral health maintained.",
-    "status": "completed"
-  },
-  {
-    "Id": 2,
-    "patientId": "2",
-    "date": "2024-01-08",
-    "procedure": "Composite Filling",
-    "tooth": ["#18"],
-    "provider": "Dr. Johnson",
-    "cost": 280.00,
-    "insuranceCovered": 200.00,
-    "notes": "Single surface composite filling. Patient tolerated procedure well.",
-    "status": "completed"
-  },
-  {
-    "Id": 3,
-    "patientId": "3",
-    "date": "2024-01-05",
-    "procedure": "Root Canal Therapy",
-    "tooth": ["#14"],
-    "provider": "Dr. Wilson",
-    "cost": 1200.00,
-    "insuranceCovered": 800.00,
-    "notes": "Root canal completed in single visit. Temporary filling placed.",
-    "status": "completed"
-  },
-  {
-    "Id": 4,
-    "patientId": "4",
-    "date": "2024-01-03",
-    "procedure": "Crown Preparation",
-    "tooth": ["#3"],
-    "provider": "Dr. Smith",
-    "cost": 800.00,
-    "insuranceCovered": 600.00,
-    "notes": "Crown prep completed. Temporary crown placed. Permanent crown ordered.",
-    "status": "in-progress"
-  },
-  {
-    "Id": 5,
-    "patientId": "5",
-    "date": "2024-01-12",
-    "procedure": "Dental Exam",
-    "tooth": ["All"],
-    "provider": "Dr. Johnson",
-    "cost": 120.00,
-    "insuranceCovered": 100.00,
-    "notes": "Comprehensive dental examination. Minor cavities detected.",
-    "status": "completed"
-  },
-  {
-    "Id": 6,
-    "patientId": "6",
-    "date": "2024-01-06",
-    "procedure": "Tooth Extraction",
-    "tooth": ["#32"],
-    "provider": "Dr. Wilson",
-    "cost": 350.00,
-    "insuranceCovered": 250.00,
-    "notes": "Simple extraction of wisdom tooth. Patient recovering well.",
-"status": "completed"
-  }
-],
-"procedureLibrary",":", [
-  {
-    "id": "prev-001",
-    "name": "Routine Cleaning",
-    "category": "preventive",
-    "description": "Professional dental prophylaxis and plaque removal",
-    "cost": 150.00,
-    "insuranceRate": 1.0,
-    "duration": 45
-  },
-  {
-    "id": "prev-002", 
-    "name": "Dental Exam",
-    "category": "preventive",
-    "description": "Comprehensive oral health examination",
-    "cost": 120.00,
-    "insuranceRate": 1.0,
-    "duration": 30
-  },
-  {
-    "id": "prev-003",
-    "name": "X-Rays (Bitewing)",
-    "category": "preventive", 
-    "description": "Digital bitewing radiographs",
-    "cost": 80.00,
-    "insuranceRate": 1.0,
-    "duration": 15
-  },
-  {
-    "id": "prev-004",
-    "name": "Fluoride Treatment",
-    "category": "preventive",
-    "description": "Professional fluoride application",
-    "cost": 65.00,
-    "insuranceRate": 0.8,
-    "duration": 15
-  },
-  {
-    "id": "rest-001",
-    "name": "Composite Filling",
-    "category": "restorative",
-    "description": "Tooth-colored composite resin filling",
-    "cost": 280.00,
-    "insuranceRate": 0.8,
-    "duration": 60
-  },
-  {
-    "id": "rest-002",
-    "name": "Amalgam Filling", 
-    "category": "restorative",
-    "description": "Silver amalgam dental filling",
-    "cost": 220.00,
-    "insuranceRate": 0.8,
-    "duration": 45
-  },
-  {
-    "id": "rest-003",
-    "name": "Dental Crown",
-    "category": "restorative",
-    "description": "Porcelain or ceramic crown",
-    "cost": 1200.00,
-    "insuranceRate": 0.5,
-    "duration": 120
-  },
-  {
-    "id": "rest-004",
-    "name": "Dental Bridge",
-    "category": "restorative", 
-    "description": "Fixed dental bridge restoration",
-    "cost": 2400.00,
-    "insuranceRate": 0.5,
-    "duration": 180
-  },
-  {
-    "id": "endo-001",
-    "name": "Root Canal Therapy",
-    "category": "endodontic",
-    "description": "Endodontic treatment of infected tooth",
-    "cost": 1200.00,
-    "insuranceRate": 0.8,
-    "duration": 90
-  },
-  {
-    "id": "endo-002",
-    "name": "Apicoectomy",
-    "category": "endodontic",
-    "description": "Surgical root tip removal",
-    "cost": 800.00,
-    "insuranceRate": 0.8,
-    "duration": 75
-  },
-  {
-    "id": "surg-001",
-    "name": "Tooth Extraction",
-    "category": "surgical",
-    "description": "Simple tooth extraction",
-    "cost": 350.00,
-    "insuranceRate": 0.8,
-    "duration": 45
-  },
-  {
-    "id": "surg-002",
-    "name": "Wisdom Tooth Extraction",
-    "category": "surgical", 
-    "description": "Surgical removal of wisdom teeth",
-    "cost": 450.00,
-    "insuranceRate": 0.8,
-    "duration": 60
-  },
-  {
-    "id": "surg-003",
-    "name": "Dental Implant",
-    "category": "surgical",
-    "description": "Titanium dental implant placement",
-    "cost": 3500.00,
-    "insuranceRate": 0.0,
-    "duration": 120
-  },
-  {
-    "id": "surg-004",
-    "name": "Bone Graft",
-    "category": "surgical",
-    "description": "Alveolar bone grafting procedure",
-    "cost": 800.00,
-    "insuranceRate": 0.5,
-    "duration": 90
-  },
-  {
-    "id": "orth-001",
-    "name": "Traditional Braces",
-    "category": "orthodontic",
-    "description": "Metal bracket orthodontic treatment",
-    "cost": 5500.00,
-    "insuranceRate": 0.5,
-    "duration": 60
-  },
-  {
-    "id": "orth-002", 
-    "name": "Clear Aligners",
-    "category": "orthodontic",
-    "description": "Invisalign clear aligner therapy",
-    "cost": 6500.00,
-    "insuranceRate": 0.5,
-    "duration": 45
-  },
-  {
-    "id": "cosm-001",
-    "name": "Teeth Whitening",
-    "category": "cosmetic",
-    "description": "Professional in-office whitening",
-    "cost": 650.00,
-    "insuranceRate": 0.0,
-    "duration": 90
-  },
-  {
-    "id": "cosm-002",
-    "name": "Porcelain Veneers",
-    "category": "cosmetic",
-    "description": "Custom porcelain veneer placement",
-    "cost": 1500.00,
-    "insuranceRate": 0.0,
-    "duration": 120
-  }
-]
-]
+{
+  "treatments": [
+    {
+      "Id": 1,
+      "patientId": "1",
+      "date": "2024-01-10",
+      "procedure": "Teeth Cleaning",
+      "tooth": ["All"],
+      "provider": "Dr. Smith",
+      "cost": 150.00,
+      "insuranceCovered": 120.00,
+      "notes": "Routine cleaning completed. Good oral health maintained.",
+      "status": "completed"
+    },
+    {
+      "Id": 2,
+      "patientId": "2",
+      "date": "2024-01-08",
+      "procedure": "Composite Filling",
+      "tooth": ["#18"],
+      "provider": "Dr. Johnson",
+      "cost": 280.00,
+      "insuranceCovered": 200.00,
+      "notes": "Single surface composite filling. Patient tolerated procedure well.",
+      "status": "completed"
+    },
+    {
+      "Id": 3,
+      "patientId": "3",
+      "date": "2024-01-05",
+      "procedure": "Root Canal Therapy",
+      "tooth": ["#14"],
+      "provider": "Dr. Wilson",
+      "cost": 1200.00,
+      "insuranceCovered": 800.00,
+      "notes": "Root canal completed in single visit. Temporary filling placed.",
+      "status": "completed"
+    },
+    {
+      "Id": 4,
+      "patientId": "4",
+      "date": "2024-01-03",
+      "procedure": "Crown Preparation",
+      "tooth": ["#3"],
+      "provider": "Dr. Smith",
+      "cost": 800.00,
+      "insuranceCovered": 600.00,
+      "notes": "Crown prep completed. Temporary crown placed. Permanent crown ordered.",
+      "status": "in-progress"
+    },
+    {
+      "Id": 5,
+      "patientId": "5",
+      "date": "2024-01-12",
+      "procedure": "Dental Exam",
+      "tooth": ["All"],
+      "provider": "Dr. Johnson",
+      "cost": 120.00,
+      "insuranceCovered": 100.00,
+      "notes": "Comprehensive dental examination. Minor cavities detected.",
+      "status": "completed"
+    },
+    {
+      "Id": 6,
+      "patientId": "6",
+      "date": "2024-01-06",
+      "procedure": "Tooth Extraction",
+      "tooth": ["#32"],
+      "provider": "Dr. Wilson",
+      "cost": 350.00,
+      "insuranceCovered": 250.00,
+      "notes": "Simple extraction of wisdom tooth. Patient recovering well.",
+      "status": "completed"
+    }
+  ],
+  "procedureLibrary": [
+    {
+      "id": "prev-001",
+      "name": "Routine Cleaning",
+      "category": "preventive",
+      "description": "Professional dental prophylaxis and plaque removal",
+      "cost": 150.00,
+      "insuranceRate": 1.0,
+      "duration": 45
+    },
+    {
+      "id": "prev-002", 
+      "name": "Dental Exam",
+      "category": "preventive",
+      "description": "Comprehensive oral health examination",
+      "cost": 120.00,
+      "insuranceRate": 1.0,
+      "duration": 30
+    },
+    {
+      "id": "prev-003",
+      "name": "X-Rays (Bitewing)",
+      "category": "preventive", 
+      "description": "Digital bitewing radiographs",
+      "cost": 80.00,
+      "insuranceRate": 1.0,
+      "duration": 15
+    },
+    {
+      "id": "prev-004",
+      "name": "Fluoride Treatment",
+      "category": "preventive",
+      "description": "Professional fluoride application",
+      "cost": 65.00,
+      "insuranceRate": 0.8,
+      "duration": 15
+    },
+    {
+      "id": "rest-001",
+      "name": "Composite Filling",
+      "category": "restorative",
+      "description": "Tooth-colored composite resin filling",
+      "cost": 280.00,
+      "insuranceRate": 0.8,
+      "duration": 60
+    },
+    {
+      "id": "rest-002",
+      "name": "Amalgam Filling", 
+      "category": "restorative",
+      "description": "Silver amalgam dental filling",
+      "cost": 220.00,
+      "insuranceRate": 0.8,
+      "duration": 45
+    },
+    {
+      "id": "rest-003",
+      "name": "Dental Crown",
+      "category": "restorative",
+      "description": "Porcelain or ceramic crown",
+      "cost": 1200.00,
+      "insuranceRate": 0.5,
+      "duration": 120
+    },
+    {
+      "id": "rest-004",
+      "name": "Dental Bridge",
+      "category": "restorative", 
+      "description": "Fixed dental bridge restoration",
+      "cost": 2400.00,
+      "insuranceRate": 0.5,
+      "duration": 180
+    },
+    {
+      "id": "endo-001",
+      "name": "Root Canal Therapy",
+      "category": "endodontic",
+      "description": "Endodontic treatment of infected tooth",
+      "cost": 1200.00,
+      "insuranceRate": 0.8,
+      "duration": 90
+    },
+    {
+      "id": "endo-002",
+      "name": "Apicoectomy",
+      "category": "endodontic",
+      "description": "Surgical root tip removal",
+      "cost": 800.00,
+      "insuranceRate": 0.8,
+      "duration": 75
+    },
+    {
+      "id": "surg-001",
+      "name": "Tooth Extraction",
+      "category": "surgical",
+      "description": "Simple tooth extraction",
+      "cost": 350.00,
+      "insuranceRate": 0.8,
+      "duration": 45
+    },
+    {
+      "id": "surg-002",
+      "name": "Wisdom Tooth Extraction",
+      "category": "surgical", 
+      "description": "Surgical removal of wisdom teeth",
+      "cost": 450.00,
+      "insuranceRate": 0.8,
+      "duration": 60
+    },
+    {
+      "id": "surg-003",
+      "name": "Dental Implant",
+      "category": "surgical",
+      "description": "Titanium dental implant placement",
+      "cost": 3500.00,
+      "insuranceRate": 0.0,
+      "duration": 120
+    },
+    {
+      "id": "surg-004",
+      "name": "Bone Graft",
+      "category": "surgical",
+      "description": "Alveolar bone grafting procedure",
+      "cost": 800.00,
+      "insuranceRate": 0.5,
+      "duration": 90
+    },
+    {
+      "id": "orth-001",
+      "name": "Traditional Braces",
+      "category": "orthodontic",
+      "description": "Metal bracket orthodontic treatment",
+      "cost": 5500.00,
+      "insuranceRate": 0.5,
+      "duration": 60
+    },
+    {
+      "id": "orth-002", 
+      "name": "Clear Aligners",
+      "category": "orthodontic",
+      "description": "Invisalign clear aligner therapy",
+      "cost": 6500.00,
+      "insuranceRate": 0.5,
+      "duration": 45
+    },
+    {
+      "id": "cosm-001",
+      "name": "Teeth Whitening",
+      "category": "cosmetic",
+      "description": "Professional in-office whitening",
+      "cost": 650.00,
+      "insuranceRate": 0.0,
+      "duration": 90
+    },
+    {
+      "id": "cosm-002",
+      "name": "Porcelain Veneers",
+      "category": "cosmetic",
+      "description": "Custom porcelain veneer placement",
+      "cost": 1500.00,
+      "insuranceRate": 0.0,
+      "duration": 120
+    }
+  ]
+}
